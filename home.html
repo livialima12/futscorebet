@@ -5,26 +5,20 @@
         <title>FutScore Bet</title>
         <link rel="icon" href="favicon.png">
         <link rel="stylesheet" type="text/css" href="css/reset.css">
-		<link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/global.css">
+        <link rel="stylesheet" type="text/css" href="css/home.css">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Montserrat">
+        
     </head>
 
     <body>
 
-        <background>
-
-        </background>
-
         <header>
-
-            <div class="header">
-                
-                <h1>FutScore Bet</h1>
-            </div>
-
+            <img src="images/logo.png" alt="FutScore Bet" class="logo-header" width=15% height=15%>
         </header>
         <main>
 
-            <section class="container" id="formulario-de-login">
+            <section class="formulario">
 
                 <h2>Login</h2>
 
@@ -32,11 +26,10 @@
 
                     <fieldset class="dados">
 
-                        <label for="email">Email</label>
+                        <label for="email" >Email</label>
                         <input 
                         id="email"
                         name="email"
-                        placeholder="Digite seu email"
                         type="email"
                         autofocus
                         required
@@ -46,21 +39,19 @@
                         <input
                         id="senha"
                         name="senha"
-                        placeholder="Digite sua senha"
                         type="password"
                         required
                         >
-
                     </fieldset>
 
-                    <fieldset class="enviar">
+                    <button class="botao">Log In</button>
+
+                    <div class="interacao">
                         <a href="#">Esqueci minha senha</a>
-                        <button id="botao">Login</button>
-                    </fieldset>
-
-                    <fieldset class="cadastre-se">
-                        Primeira vez por aqui? <a href="#">Cadastre-se.</a>
-                    </fieldset>
+                        <a href="#">Cadastre-se</a>
+                        
+                    </div>
+                    
 
                 </form>
             

@@ -1,0 +1,119 @@
+/*Formulário de Login*/
+.formulario {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /*Considera 50% do tamanho do formulário para que o calculo total seja sempre à partir do centro*/
+    box-shadow: 1px 1px .2em #494657;
+    font-size: .8rem;
+    background-color: white;
+    width: 25%;
+}
+
+/*Titulo formulário de login*/
+.formulario h2:first-child{
+    background-color:#191820;
+    color: white;
+    padding: .8rem;
+    text-align: center;
+    font-size: .8rem;
+    font-weight: bold;
+    text-transform: uppercase
+}
+
+/*Campos do formulário*/
+#login{
+    padding: 1rem;
+    line-height: 1.8rem;
+    
+}
+
+/*Dados de email e Senha*/
+.dados{
+    position: relative;
+    padding-bottom: 1rem;
+    width: 100%;    
+}
+.dados label{
+    font-weight: bold;
+    display: block;
+    padding-left: 0.6em;
+}
+.dados input{
+    border: none;
+    line-height: 2rem;
+    width: 70%;
+    border-bottom: 1px solid #CDCDCD;
+    
+}
+
+.dados input:focus {
+    border-bottom: #58d8c9 2px solid;
+    outline: 0;
+} 
+
+/*Botão do formulário*/
+.botao{
+    background-color: #58d8c9;
+    color: #191820;
+    border: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding: .4em 1em .4em 1em;
+    color: #191820;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: .8rem;
+}
+
+/*Interação do formulário*/
+.interacao{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*Icones Email*/
+label[for="email"]{
+    position: relative;
+}
+label[for="email"]::after{
+    position: absolute;
+    content: "";
+    background-image: url("../images/user.png");
+    background-size: 50% 50% /*Por que usar 50%?*/;
+    background-repeat: no-repeat;
+    background-position:center;
+    height: 5.5ch;
+    width: 5.5ch;
+    top:28px;
+    left: -10px;
+}
+#email {
+    position: relative;
+    width: calc(100% - 6ch);
+    left: 6ch;
+}
+/*Icones Senha*/
+label[for="senha"]{
+    position: relative;
+}
+label[for="senha"]::after{
+    position: absolute;
+    content: "";
+    background-image: url("../images/key.png");
+    background-size: 50% 50% /*Por que usar 50%?*/;
+    background-repeat: no-repeat;
+    background-position:center;
+    height: 5.5ch;
+    width: 5.5ch;
+    top:28px;
+    left: -10px;
+}
+#senha {
+    position: relative;
+    width: calc(100% - 6ch);
+    left: 6ch;
+}
