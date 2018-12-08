@@ -1,17 +1,21 @@
 /*Formulário de Login*/
-.formulario {
-    position: fixed;
-    top: 50%;
+.form {
+    position: relative;
     left: 50%;
-    transform: translate(-50%, -50%); /*Considera 50% do tamanho do formulário para que o calculo total seja sempre à partir do centro*/
+    top: 50%;
+    transform: translate(-50%, 50%); 
     box-shadow: 1px 1px .2em #494657;
     font-size: .8rem;
     background-color: white;
     width: 25%;
 }
 
+input::placeholder{
+    color: #CDCDCD;
+}
+
 /*Titulo formulário de login*/
-.formulario h2:first-child{
+.form h2:first-child{
     background-color:#191820;
     color: white;
     padding: .8rem;
@@ -28,26 +32,24 @@
     
 }
 
-/*Dados de email e Senha*/
-.dados{
+/*Password and Email input*/
+.login-info{
     position: relative;
     padding-bottom: 1rem;
     width: 100%;    
 }
-.dados label{
+.login-info label{
     font-weight: bold;
     display: block;
     padding-left: 0.6em;
 }
-.dados input{
+.login-info input{
     border: none;
     line-height: 2rem;
     width: 70%;
     border-bottom: 1px solid #CDCDCD;
-    
 }
-
-.dados input:focus {
+.login-info input:focus {
     border-bottom: #58d8c9 2px solid;
     outline: 0;
 } 
@@ -68,18 +70,16 @@
     font-size: .8rem;
 }
 
-/*Interação do formulário*/
-.interacao{
+/*Forgot password and Sign in*/
+.interaction{
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-/*Icones Email*/
-label[for="email"]{
-    position: relative;
-}
-label[for="email"]::after{
+/*Email icon*/
+
+div[id="icon-email"]::after{
     position: absolute;
     content: "";
     background-image: url("../images/user.png");
@@ -88,32 +88,33 @@ label[for="email"]::after{
     background-position:center;
     height: 5.5ch;
     width: 5.5ch;
-    top:28px;
+    top:0px;
     left: -10px;
 }
 #email {
     position: relative;
     width: calc(100% - 6ch);
     left: 6ch;
+    margin-bottom: 20px;
 }
-/*Icones Senha*/
-label[for="senha"]{
-    position: relative;
-}
-label[for="senha"]::after{
+
+/*Password icons*/
+
+div[id="icon-password"]::before{
     position: absolute;
     content: "";
     background-image: url("../images/key.png");
-    background-size: 50% 50% /*Por que usar 50%?*/;
+    background-size: 50% 50%;
     background-repeat: no-repeat;
     background-position:center;
     height: 5.5ch;
     width: 5.5ch;
-    top:28px;
+    top:58px;
     left: -10px;
 }
-#senha {
+#password {
     position: relative;
     width: calc(100% - 6ch);
     left: 6ch;
 }
+

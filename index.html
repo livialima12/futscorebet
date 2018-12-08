@@ -18,37 +18,43 @@
         </header>
         <main>
 
-            <section class="formulario">
+            <section class="form">
 
                 <h2>Login</h2>
 
                 <form id="login">
 
-                    <fieldset class="dados">
+                    <fieldset class="login-info">
 
-                        <label for="email" >Email</label>
+                        <label for="email" ></label>                        
+                        <div id="icon-email" for="email">
                         <input 
                         id="email"
                         name="email"
                         type="email"
                         autofocus
+                        placeholder="Digite seu email"
                         required
                         >
+                        </div>
 
-                        <label for="senha">Senha</label>
+                        <label for="password"></label>
+                        <div id="icon-password">
                         <input
-                        id="senha"
-                        name="senha"
+                        id="password"
+                        name="password"
                         type="password"
+                        placeholder="Digite sua senha"
                         required
                         >
+                        </div>
                     </fieldset>
 
                     <button class="botao">Log In</button>
 
-                    <div class="interacao">
+                    <div class="interaction">
                         <a href="#">Esqueci minha senha</a>
-                        <a href="#">Cadastre-se</a>
+                        <a href="sign_in.html">Cadastre-se</a>
                         
                     </div>
                     
