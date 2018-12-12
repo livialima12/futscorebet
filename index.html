@@ -18,7 +18,7 @@
         </header>
         <main>
 
-            <section class="form">
+            <section class="form login">
 
                 <h2>Login</h2>
 
@@ -53,8 +53,8 @@
                     <button class="botao">Log In</button>
 
                     <div class="interaction">
-                        <a href="#">Esqueci minha senha</a>
-                        <a href="sign_in.html">Cadastre-se</a>
+                        <a href="#" id="button-forgot">Esqueci minha senha</a>
+                        <a href="sign_in.html" id="button-signin">Cadastre-se</a>
                         
                     </div>
                     
@@ -63,11 +63,39 @@
             
             </section>
 
+            <section class="form forgot hide">
+
+                    <h2>Esqueci minha senha</h2>
+
+                    <form id="forgot-password">
+                        <label for="email-recover" ></label>                        
+                        <input 
+                        id="email-recover"
+                        name="email-recover"
+                        type="email"
+                        autofocus
+                        placeholder="Digite seu email"
+                        required
+                        >
+                        </div>
+                        <button class="botao">Recuperar minha senha</button>
+
+                        <div class="interaction">
+                            <a href="#" id="button-login">Já sou cadastrado. Fazer login</a>
+                            <a href="sign_in.html" id="button-signin">Cadastre-se</a>        
+                        </div>
+                    </form>
+
+
+
+            </section>
+
+
         </main>
         <footer>
 
         </footer>
 
-        <script src=""></script>
+        <script src="js/login.js"></script>
     </body>
 </html>
