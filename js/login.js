@@ -1,6 +1,6 @@
-popup();
+popupFormLogin();
 
-function popup(){
+function popupFormLogin(){
     var buttonForgotPassword = document.querySelector("#button-forgot");
     var buttonLogin = document.querySelector("#button-login");
     var formLogin = document.querySelector(".login");

@@ -1,13 +1,16 @@
 /*Formulário de Login*/
 .form {
-    position: relative;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, 55%); 
     box-shadow: 1px 1px .2em #494657;
     font-size: .8rem;
     background-color: white;
     width: 25%;
+    position: relative;
+    top: 50%;
+    transform: translate(0%, 55%); 
+}
+
+.login{    
+    margin: auto;
 }
 
 input::placeholder{
@@ -126,12 +129,12 @@ div[id="icon-password"]::before{
     
 }
 .forgot{
-    transform: translate(-50%, 100%);
+    transform: translate(0%, 100%);
+    margin:auto;
     background-color: rgba(256, 256, 256, .9);
     z-index: 9999; 
     box-shadow: 0px 0px 0px 9999px rgba(0, 0, 0, 0.75);
 }
-
 .hide{
     display: none;
 }

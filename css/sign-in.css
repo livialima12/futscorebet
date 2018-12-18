@@ -61,9 +61,6 @@ input::placeholder{
     clear: both;
 }
 
-
-
-
 .signin-form label{
     font-weight: bold;
 }
@@ -95,8 +92,6 @@ input::placeholder{
     font-weight: bold;
     font-size: .8rem;
 }
-
-
 .interaction{
     float: right;
 }
