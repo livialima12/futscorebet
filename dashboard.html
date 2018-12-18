@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="PT-BR">
+ 
 
     <head>
         <meta charset="UTF-8">
@@ -24,17 +24,42 @@
                 <li>Configurações</li>
             </ul>
         </div>
-        <div class="content">
-            <div class="filter">
-            <select  type="select">
-                <option value="mostRecent">Teste 1</option>
-                <option value="lastRecent">Teste 2</option>
-                <option value="mostRecent">Teste 3</option>
-                <option value="mostRecent">Teste 4</option>
-            </select>
-        </div>
-        </div>
         
+        <div class="content">
+            <section class="upper">
+                <div class="search first-line">
+                    <input name="search">
+                    <button id="search">Buscar</button>
+
+                </div>
+
+                <div class="filter first-line">
+                    <select  type="select">
+                        <option value="mostRecent">Teste 1</option>
+                        <option value="lastRecent">Teste 2</option>
+                        <option value="mostRecent">Teste 3</option>
+                        <option value="mostRecent">Teste 4</option>
+                    </select>
+                </div>
+
+                <div class="suspended_menu second-line">
+                    <ol>
+                        <li class="botoes">Inscrições abertas</li>
+                        <li class="botoes">Em Andamento</li>
+                        <li class="botoes">Finalizados</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section class="cards">
+                <div class="card">
+                    <h3>Titulo do Bolão</h3>
+                    <i class="icon view especificacoes"></i><p class="especificacoes">tipo do bolão</p> <p class="especificacoes">referente ao turno & campeonato</p>
+                    <p class="pricing" id="entry">Inscrição</p> <p class="pricing" id="prize">Premiação</p>
+                    <p class="begin">Data de início</p>
+                </div>
+            </section>
+        </div>
         
         <script src="js/dashboard.js"></script>
     </body>
