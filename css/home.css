@@ -3,7 +3,7 @@
     box-shadow: 1px 1px .2em #494657;
     font-size: .8rem;
     background-color: white;
-    width: 25%;
+    width: 90%;
     position: relative;
     top: 50%;
     transform: translate(0%, 55%); 
@@ -17,7 +17,6 @@ input::placeholder{
     color: #CDCDCD;
 }
 
-/*Titulo formulário de login*/
 .form h2:first-child{
     background-color:#191820;
     color: white;
@@ -27,12 +26,12 @@ input::placeholder{
     font-weight: bold;
     text-transform: uppercase
 }
+    
 
 /*Campos do formulário*/
 #login, #forgot-password{
     padding: 1rem;
-    line-height: 1.8rem;
-    
+    line-height: 1.8rem;        
 }
 
 /*Password and Email input*/
@@ -41,21 +40,43 @@ input::placeholder{
     padding-bottom: 1rem;
     width: 100%;    
 }
+
 label{
     font-weight: bold;
     display: block;
     padding-left: 0.6em;
 }
+
 input{
     border: none;
     line-height: 2rem;
-    width: 70%;
+    width: 100%;
     border-bottom: 1px solid #CDCDCD;
 }
+
 input:focus {
     border-bottom: #58d8c9 2px solid;
     outline: 0;
-} 
+}
+
+/*Forgot password*/
+.forgot input{
+    width: 100%;
+    margin-bottom: 1rem;        
+}
+
+.forgot{
+    margin:auto;
+    background-color: rgba(256, 256, 256, .9);
+    z-index: 9999; 
+    box-shadow: 0px 0px 0px 9999px rgba(0, 0, 0, 0.65);
+    border-top: #58d8c9 solid 1px;
+    vertical-align: middle;
+}
+
+.hide{
+    display: none;
+}
 
 /*Botão do formulário*/
 .botao{
@@ -72,69 +93,90 @@ input:focus {
     font-weight: bold;
     font-size: .8rem;
 }
-
-/*Forgot password and Sign in*/
+    
 .interaction{
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-/*Email icon*/
+@media (min-width: 430px){
 
-div[id="icon-email"]::after{
-    position: absolute;
-    content: "";
-    background-image: url("../images/user.png");
-    background-size: 50% 50% /*Por que usar 50%?*/;
-    background-repeat: no-repeat;
-    background-position:center;
-    height: 5.5ch;
-    width: 5.5ch;
-    top:0px;
-    left: -10px;
-}
-#email {
-    position: relative;
-    width: calc(100% - 6ch);
-    left: 6ch;
-    margin-bottom: 20px;
-}
-
-/*Password icons*/
-
-div[id="icon-password"]::before{
-    position: absolute;
-    content: "";
-    background-image: url("../images/key.png");
-    background-size: 50% 50%;
-    background-repeat: no-repeat;
-    background-position:center;
-    height: 5.5ch;
-    width: 5.5ch;
-    top:58px;
-    left: -10px;
-}
-#password {
-    position: relative;
-    width: calc(100% - 6ch);
-    left: 6ch;
-}
-
-
-/*Forgot password*/
-.forgot input{
-    width: 100%;
-    margin-bottom: 1rem;
+    /*Formulário de Login*/
+    .form {
+        width: 50%;
+    }
     
+    input{
+        width: 70%;
+    }
+    
+    .botao{
+        width: 100%;
+    }
+    /*Email icon*/
+
+    div[id="icon-email"]::after{
+        position: absolute;
+        content: "";
+        background-image: url("../images/user.png");
+        background-size: 50% 50% /*Por que usar 50%?*/;
+        background-repeat: no-repeat;
+        background-position:center;
+        height: 5.5ch;
+        width: 5.5ch;
+        top:0px;
+        left: -10px;
+    }
+    
+    #email {
+        position: relative;
+        width: calc(100% - 6ch);
+        left: 6ch;
+        margin-bottom: 20px;
+    }
+
+    /*Password icons*/
+
+    div[id="icon-password"]::before{
+        position: absolute;
+        content: "";
+        background-image: url("../images/key.png");
+        background-size: 50% 50%;
+        background-repeat: no-repeat;
+        background-position:center;
+        height: 5.5ch;
+        width: 5.5ch;
+        top:58px;
+        left: -10px;
+    }
+    #password {
+        position: relative;
+        width: calc(100% - 6ch);
+        left: 6ch;
+    }
+
+
+    /*Forgot password*/
+    .forgot input{
+        width: 100%;
+        margin-bottom: 1rem;
+        
+    }
+    .forgot{
+        transform: translate(0%, 100%);
+        margin:auto;
+        background-color: rgba(256, 256, 256, .9);
+        z-index: 9999; 
+        box-shadow: 0px 0px 0px 9999px rgba(0, 0, 0, 0.75);
+    }
+    .hide{
+        display: none;
+    }
 }
-.forgot{
-    transform: translate(0%, 100%);
-    margin:auto;
-    background-color: rgba(256, 256, 256, .9);
-    z-index: 9999; 
-    box-shadow: 0px 0px 0px 9999px rgba(0, 0, 0, 0.75);
-}
-.hide{
-    display: none;
+
+@media (min-width:770px){
+    .form {
+        width: 25%;
+    }
 }

@@ -1,0 +1,10 @@
+.info-div{
+    display: flex;
+}
+
+.how-to{
+    font-size: 60%;
+    line-height: 120%;
+    padding-top: 10%;
+    float: left;
+}

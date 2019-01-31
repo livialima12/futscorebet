@@ -23,15 +23,49 @@ body{
 header {
     background-color: #191820;
     text-align: center;
-    padding: 1rem;
+    padding: 1em;
     display: flex;
-    
+    height: auto;
 }
+
 .logo-header{
     margin: auto;
+    width: 45%;
+    height: 45%;
+}
+
+/*Menu Lateral*/
+.menu-icon{
+    color: white;
+    transform: scale(1.5);
+    position: absolute;
+    transform-origin: 0;
+}
+
+.sidebar-menu{
+
+    background-color: #ced1d6;
+    z-index: 1;
+    position: fixed;
+    top: -2;
+    left: -90%;
+
+    width: 65%;
+    max-width: 320px;
+    height: 100%;
+    padding: 1em;
+
+    transition: left 0.3s ease-out;
+}
+
+.active-menu{
+    left: 0;
 }
 
 
+
+
+/*Links*/
 a{
     font-size: 0.7rem;
     color: #ced1d6;
@@ -40,4 +74,14 @@ a{
 a:hover{
     color:#191820;
     text-decoration: underline;
+}
+
+
+
+@media (min-width: 430px){
+    .logo-header{
+        margin: auto;
+        width: 20%;
+        height: 20%;
+    }
 }
