@@ -2,13 +2,18 @@ class InfoController{
 
     constructor(){
         
+        this.info = new Info();
+        this.view = new InfoView();
+        this.carregaPaginaInfo();
+        
     }
     
 
-    carregaPaginaInfo(object){
+    carregaPaginaInfo(){
+        var x  = sessionStorage.getItem("info");
+        var info = JSON.parse(x);
 
-        console.log(object);
-
+        this.info.carregaObjetoInfo(info);
         
     }
 

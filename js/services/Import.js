@@ -5,7 +5,7 @@ class Import{
     }
 
     obterBoloes(){
-        return Promise.all([this._http.get("https://api.myjson.com/bins/iqzyo")])
+        return Promise.all([this._http.get("https://api.myjson.com/bins/11q338")])
         .then(b => {            
             let bolao = (Object.keys(b).map(i => b[i]))
             return bolao;

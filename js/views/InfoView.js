@@ -2,13 +2,15 @@ class InfoView{
 
     constructor(){
 
+
     }
     
     load(info){
+        console.log("Entrei aqui");
         
-        this.div = document.getElementsByClassName("card");
+        let div = document.querySelector(".card");
         let templateInfo = this.template(info);
-        this.div.innerHTML = templateInfo;
+        div.innerHTML = templateInfo;
     }
 
     template(info){

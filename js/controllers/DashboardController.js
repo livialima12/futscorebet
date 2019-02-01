@@ -28,15 +28,17 @@ class DashboardController{
                 }else{
                     this.carregaInfo().map( info => {                    
                         if(this.cardID == info.id){
+                            var infoArray = JSON.stringify(info);
+                            console.log(infoArray);
+                            sessionStorage.setItem("info", infoArray);
                             window.location = "info-bolao.html";
-                            this.info.carregaObjetoInfo(info);
                         }
                     });
                 }
             }); 
         };
     }
-
+    
     carregaInfo(){
         var mine = this.bolaoCreate.mine();
         var progress = this.bolaoCreate.inProgress();
