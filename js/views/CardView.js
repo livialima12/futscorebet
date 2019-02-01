@@ -5,7 +5,6 @@ class CardView{
     }
 
     load(cards){
-        
         var receivecards = cards.map(card => this.template(card));
         this.element.innerHTML = receivecards;
     }
@@ -26,10 +25,4 @@ class CardView{
         </div>
         
     `}
-
-    
-
-
-
-    
 }

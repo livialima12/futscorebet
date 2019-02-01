@@ -2,11 +2,11 @@ class InfoView{
 
     constructor(){
 
-        this.div = document.getElementsByClassName("card");
-
     }
-
+    
     load(info){
+        
+        this.div = document.getElementsByClassName("card");
         let templateInfo = this.template(info);
         this.div.innerHTML = templateInfo;
     }

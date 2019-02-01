@@ -1,21 +1,22 @@
 class DashboardController{
 
     constructor(){
+        this.bolaoCreate = new ListaBolao();
+        this.info = new Info();
         this.carregaCards();
+        this.carregaPaginaInfo();
         
     }
     
     carregaCards(){
-        this.bolaoCreate = new ListaBolao();
         this.bolaoCreate.obterInProgress();
         this.bolaoCreate.obterMine();
-        this.carregaPaginaInfo();
+        
     }
     
     carregaPaginaInfo(){
         
         var tabs = document.getElementsByClassName("tabs");
-        
         
         for (var i = 0 ; i < tabs.length; i++) {
             
@@ -25,19 +26,22 @@ class DashboardController{
                 if(this.cardID === "mine" || this.cardID === "open"){
                     return;
                 }else{
-                    this.cards = this.bolaoCreate.getAllCards();
-                    var infoCardID = "?para1=" + this.cardID;
-                    window.location.href = "info-bolao.html" + infoCardID;   
+                    this.carregaInfo().map( info => {                    
+                        if(this.cardID == info.id){
+                            window.location = "info-bolao.html";
+                            this.info.carregaObjetoInfo(info);
+                        }
+                    });
                 }
-                
             }); 
         };
     }
 
-    static carregaInfo(){
-        console.log(this.cardID);
-        console.log(this.cards);
-
+    carregaInfo(){
+        var mine = this.bolaoCreate.mine();
+        var progress = this.bolaoCreate.inProgress();
+        var all = mine.concat(progress);
+        return all;
     }
 
 }
