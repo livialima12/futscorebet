@@ -14,7 +14,6 @@ class InfoController{
         var info = JSON.parse(x);
 
         this.info.carregaObjetoInfo(info);
-        
     }
 
 
