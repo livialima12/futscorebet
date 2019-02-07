@@ -10,9 +10,4 @@ class TabsController{
         this.tabMenu.openPage(pageName);
     }
 
-    carregaCards(){
-        this.bolaoCreate.obterInProgress();
-        this.bolaoCreate.obterMine();
-    }
-
 }

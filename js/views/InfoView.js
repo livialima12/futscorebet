@@ -8,42 +8,42 @@ class InfoView{
     load(info){
         console.log("Entrei aqui");
         
-        let div = document.querySelector(".card");
+        let div = document.querySelector(".info-bolao .card");
         let templateInfo = this.template(info);
         div.innerHTML = templateInfo;
     }
 
     template(info){
         return `
-            <h3>${info.name}</h3>
+            <h3 class="bolao-title">${info.name}</h3>
             <div class="info-div">
-                <p>Campeonato</p>
-                <p>${info.tournament}</p>
+                <p class="description">Campeonato</p>
+                <p class="get-info">${info.tournament}</p>
             </div>
 
             <div class="info-div">
-                <p>Tipo do Bolão</p>
-                <p>${info.type}</p>
+                <p class="description">Tipo do Bolão</p>
+                <p class="get-info">${info.type}</p>
             </div>
 
             <div class="info-div">
-                <p>Valor de participação</p>
-                <p>R$${info.subscription}</p>
+                <p class="description">Valor de participação</p>
+                <p class="get-info">R$${info.subscription}</p>
             </div>
 
             <div class="info-div">
-                <p>Valor de premiação</p>
-                <p>R$${info.awards}</p>
+                <p class="description">Valor de premiação</p>
+                <p class="get-info">R$${info.awards}</p>
             </div>
 
             <div class="info-div">
-                <p>Número de Participantes</p>
-                <p>${info.participants}</p>
+                <p class="description">Número de Participantes</p>
+                <p class="get-info">${info.participants}</p>
             </div>
 
             <div class="info-div">
-                <p>Data de Início</p>
-                <p>${info.date}</p>
+                <p class="description">Data de Início</p>
+                <p class="get-info">${info.date}</p>
             </div>
 
             <div class="how-to">
@@ -53,7 +53,7 @@ class InfoView{
                 <p>- Acertou o placar? Parabéns! Ganha +5 pontos!</p>
             </div>
 
-            <button>Participar</button>
+            <button class="botao">Participar</button>
             
     `}
     

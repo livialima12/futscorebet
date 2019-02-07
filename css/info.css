@@ -1,10 +1,47 @@
 .info-div{
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 2.5em;
+    border-bottom: 1px solid lightgray;
 }
 
 .how-to{
     font-size: 60%;
     line-height: 120%;
-    padding-top: 10%;
-    float: left;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    color: darkgray
+}
+
+.card{
+    max-width: 30%;
+}
+
+.description{
+    font-size: .9em;
+}
+
+.bolao-title{
+    padding-bottom: .8em;
+}
+
+.get-info{
+    font-size: 0.8em;
+    color: darkgray;
+}
+
+.botao{
+    background-color: #58d8c9;
+    color: white;
+    border: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding: .4em 1em .4em 1em;
+    
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: .8rem;
 }
