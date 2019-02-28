@@ -3,14 +3,13 @@ class CardView{
     constructor(element){
         this.element = element;
     }
-
+    
     load(cards){
         var receivecards = cards.map(card => this.template(card));
         this.element.innerHTML = receivecards;
     }
 
-    template(card){
-    
+    template(card){    
         return `
         <div class="card" id="${card.id}">
             <h3 class="bolao-title">${card.name}</h3>

@@ -3,12 +3,13 @@
 
     <head>
         <meta charset="UTF-8">
-        <title>Dashboard</title>
+        <title>Informações</title>
         <!-- <link rel="icon" href="favicon.png"> -->
         <link rel="stylesheet" type="text/css" href="css/reset.css">
         <link rel="stylesheet" type="text/css" href="css/global.css">
         <link rel="stylesheet" type="text/css" href="css/dashboard.css">
         <link rel="stylesheet" type="text/css" href="css/tabs.css">
+        <link rel="stylesheet" type="text/css" href="css/info.css">
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Montserrat">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
         <meta name="viewport" content="width=device-width">
@@ -20,6 +21,22 @@
             <img src="images/logo.png" alt="FutScore Bet" class="logo-header">
             <i onclick="sideMenuController.openSidebarMenu()" class="fas fa-bars menu-icon"></i> 
             <i onclick="sideMenuController.closeSidebarMenu()" class="fas fa-times menu-icon close-menu-icon" style = "visibility: hidden"></i> 
+
+            <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+
+            <script>
+                // Initialize Firebase
+                var config = {
+                apiKey: "AIzaSyDKyvud1Xm-EdlEpMDNPQ6XBL_bZEMFwPw",
+                authDomain: "projetoteste-cd06d.firebaseapp.com",
+                databaseURL: "https://projetoteste-cd06d.firebaseio.com",
+                projectId: "projetoteste-cd06d",
+                storageBucket: "projetoteste-cd06d.appspot.com",
+                messagingSenderId: "840611139193"
+                };
+                firebase.initializeApp(config);
+            </script>
         </header>
 
         <div class="sidebar-menu">
@@ -39,54 +56,74 @@
                 </div>
 
                 <div class="tab">
-                    <button class="tablink" onclick="tabsController.openTab('#open')">Inscrições Abertas</button>
-                    <button class="tablink" onclick="tabsController.openTab('#mine')">Meus bolões</button>
+                    <button class="tablink" onclick="tabsController.openTab('.info-bolao')">Informações</button>
+                    <button class="tablink" onclick="tabsController.openTab('.participantes-bolao')">Participantes</button>
                 </div>
-                
+
+                <!-- <div class="filter">
+                    <select  type="select">
+                        <option value="mostRecent">Teste 1</option>
+                        <option value="lastRecent">Teste 2</option>
+                        <option value="m
+                        ostRecent">Teste 3</option>
+                        <option value="mostRecent">Teste 4</option>
+                    </select>
+                </div> -->
             </div>
             
             
-            <!-- Inscrições abertas -->
-            <div class="tabs flex" id="open">
+            <!--Conteúdo-->
+            <div class="info-bolao tabs">
                 
-            </div>      
-            
-            <!-- Meus torneios -->
-            <div class="tabs hide" id="mine">
-            </div>  
+                <div class="card">
+                    
+                    
+
+                </div>
+
+            </div>
+
+            <div class="participantes-bolao tabs hide">
+                
+                <div class="card">
+                    
+                    
+
+                </div>
+
+            </div>
 
 
         </div>
         
         <!--Controller-->
-        <script src="js/controllers/DashboardController.js"></script>
+        <script src="js/controllers/InfoController.js"></script>
         <script src="js/controllers/SideMenuController.js"></script>
+        
         <script src="js/controllers/TabsController.js"></script>
         
         <!-- Helpers -->
-        <script src="js/helpers/DateHelper.js"></script>
         
-        <!-- Services -->
-        <script src="js/services/HttpService.js"></script>
-        <script src="js/services/Import.js"></script>
         
         <!--Models-->
+
         <script src="js/models/BolaoInfo.js"></script>
-        <script src="js/models/ListaBolao.js"></script>
         <script src="js/models/Info.js"></script>
         
+        
+        
+        <!-- Services -->
+
         <!-- Views -->
         <script src="js/views/SideMenuView.js"></script>
         <script src="js/views/TabsMenuView.js"></script>
-        <script src="js/views/CardView.js"></script>
         <script src="js/views/InfoView.js"></script>
         
-        <script src="js/getCards.js"></script>
-        <script>
-            
-            let dashboardController = new DashboardController();
-            let tabsController = new TabsController();
+
+        <script>      
             let sideMenuController = new SideMenuController();
+            let tabsController = new TabsController();
+            let infoController = new InfoController();
         </script>
     </body>
 

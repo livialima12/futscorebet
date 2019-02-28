@@ -1,7 +1,5 @@
 class LoginView{
 
-
-
     constructor(){
 
         this.loginId = document.querySelector("#email");
@@ -18,10 +16,8 @@ class LoginView{
     }
 
     login(){
-
         console.log(this.loginId);
         console.log(this.senhaId);
-
     }
 
     //recebe os inputs do usuário e manda para o controller

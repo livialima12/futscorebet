@@ -1,15 +1,11 @@
 class InfoView{
 
     constructor(){
-
-
     }
     
     load(info){
-        console.log("Entrei aqui");
-        
         let div = document.querySelector(".info-bolao .card");
-        let templateInfo = this.template(info);
+        let templateInfo = this.template(info.info);
         div.innerHTML = templateInfo;
     }
 
@@ -56,5 +52,27 @@ class InfoView{
             <button class="botao">Participar</button>
             
     `}
+
+    loadParticipants(participants){
+        let div = document.querySelector(".participantes-bolao .card");
+        let templateParticipants = this.templateParticipants(participants);
+        div.innerHTML = templateParticipants
+
+    }
+
+    templateParticipants(participants){
+
+        this.arrayParticipants = [];
+        let i;
+        
+        for (i = 0; i < participants.length; i++) {
+            let participantsTemplate = `
+                <p class="info-div">${participants[i].id}</p>
+            `
+            this.arrayParticipants.push(participantsTemplate);
+        }
+        let arrayParticipants = this.arrayParticipants.join("");
+        return arrayParticipants;
+    }
     
 }

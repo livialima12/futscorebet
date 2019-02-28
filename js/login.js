@@ -1,7 +1,0 @@
-popupFormLogin();
-
-function popupFormLogin(){
-   
-    
-    
-}

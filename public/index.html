@@ -7,9 +7,25 @@
         <link rel="stylesheet" type="text/css" href="css/reset.css">
         <link rel="stylesheet" type="text/css" href="css/global.css">
         <link rel="stylesheet" type="text/css" href="css/home.css">
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
         <meta name="viewport" content="width=device-width">
 
+        <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyDKyvud1Xm-EdlEpMDNPQ6XBL_bZEMFwPw",
+                authDomain: "projetoteste-cd06d.firebaseapp.com",
+                databaseURL: "https://projetoteste-cd06d.firebaseio.com",
+                projectId: "projetoteste-cd06d",
+                storageBucket: "projetoteste-cd06d.appspot.com",
+                messagingSenderId: "840611139193"
+            };
+            firebase.initializeApp(config);
+        </script>
     </head>
 
     <body>
@@ -95,13 +111,14 @@
 
         </main>
         <footer>
-
-        </footer>
+        </footer>        
 
         <script src="js/controllers/LoginController.js"></script>
         <script src="js/models/Login.js"></script>
         <script src="js/views/LoginView.js"></script>
+        <script src="js/UserInfo.js"></script>
 
         <script> let loginController = new LoginController() </script>
+        
     </body>
 </html>

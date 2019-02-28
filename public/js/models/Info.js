@@ -4,9 +4,12 @@ class Info{
     }
     
     
-    
     carregaObjetoInfo(target){
         this.template.load(target);
+    }
+
+    carregaParticipants(participants){
+        this.template.loadParticipants(participants);
     }
 
 }
