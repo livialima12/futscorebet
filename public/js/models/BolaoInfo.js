@@ -11,6 +11,7 @@ class BolaoInfo{
 
         this._date = DateHelper.textoParaData(date);
         this.date = DateHelper.dateToText(this._date);
+
     }
     
     cardObject(){
