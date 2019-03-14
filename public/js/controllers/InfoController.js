@@ -4,95 +4,135 @@ class InfoController{
         
         this.infoModel = new Info();
         this.view = new InfoView();
-
-
         
-
         this.carregaPaginaInfo();
-        this.desistirParticipacao();
-        this.realizarInscricao();
-
-
-        
-        
+        this.cancelaInscricao();
+        this.removeBotaoInscricao();
+        this.confirmaInscricao();
     }
-
-    
     
     carregaPaginaInfo(){
-        var x  = sessionStorage.getItem("infoArrayBolao");
-        this.info = JSON.parse(x);
+        let infoBolaoString  = sessionStorage.getItem("infoArrayBolao");
+        this.info = JSON.parse(infoBolaoString);
+        
+        let userString = sessionStorage.getItem("userInfo");
+        this.user = JSON.parse(userString);
+        
+        let infoString = sessionStorage.getItem("info");
+        this.boloesInfo = JSON.parse(infoString);
+        
+        //Carrega models
         this.infoModel.carregaObjetoInfo(this.info);
-        this.infoModel.carregaParticipants(this.info.participants)
+        this.infoModel.carregaParticipants(this.info.participants);
     }
     
-    desistirParticipacao(){
-        this.x = sessionStorage.getItem("userInfo");
-        this.user = JSON.parse(this.x);
-        let botao = document.querySelector(".botao");
-        
-        for (let i = 0; i < this.info.participants.length; i++) {
-            
-            let participant = this.info.participants[i];
-            if (participant.id == this.user.id){
-                
-                let status = sessionStorage.getItem("status");
-
-                if(status == "open"){
-                    botao.textContent = botao.textContent.replace('Participar', "Cancelar Inscrição")
-
-                    botao.addEventListener("click", function(){
-                        console.log("Desistir")
+    removeBotaoInscricao(){
+        if(this.status == "mine"){
+            console.log("Aqui")
+            this.botao.remove();
+        }
+    }
     
-                        // let database = firebase.database();
-                        // let x = database.ref('boloes/soon/' + i).remove();
+    cancelaInscricao(){
+        
+        this.participants = 0;
+        this.arrayParticipantes = [];
+        this.arrayIDs = [];
+        this.status = sessionStorage.getItem("status");
+        this.botao = document.querySelector(".botao");
+        
+        for (let i = 0; i < this.boloesInfo.soon.length; i++) {
+
+            this.i = i;
+
+            this.boloesInfo.soon.forEach(bolao => {    
+                this.participantes = bolao.participants;
+                let id;
+                
+                for(id in this.participantes){
+                    this.arrayParticipantes.push(this.participantes[id]);
+                    this.arrayIDs.push(id)
+                }
+                
+                for (let index = 0; index < this.arrayParticipantes.length; index++) {
+                    
+                    this.participante = this.arrayParticipantes[index];
+                    this.arrayID = this.arrayIDs[index];
+                    
+                    //cancela inscrição
+                    if (this.participante.id == this.user.id){
+                        if(this.status == "open"){
+                            this.botao.textContent = this.botao.textContent.replace('Participar', "Cancelar Inscrição")
+                            
+                            this.botao.addEventListener("click", () => {
+                                let b = i;
+                                let p = this.arrayIDs[index];
+                                
+                                let database = firebase.database();
+                                
+                                let deleta = database.ref('boloes/soon/' + b + '/participants/' + p).remove().then(x => {
+                                    let numberOfParticipantes = database.ref('boloes/soon/' + b + '/info/participants');
+
+                                    numberOfParticipantes.once('value').then(numero => {
+                                        let numeroAtualizado = numero.val() - 1;
+
+                                        let numeroDeParticipantes = {
+                                            participants: numeroAtualizado
+                                        }
+                                        database.ref('boloes/soon/' + b + '/info/').update(numeroDeParticipantes)
+                                        
+                                    }).then(x => this.view.atualizaView())
+                                })
+                            })
+                        }   
+                    }
+                }
+            });
+        }
+    }
+
+    confirmaInscricao(){
+
+        let b = this.i;
+        const matches = new MatchesSubscription();
+        
+        let participant = this.user
+        let atualizaView = this.view.atualizaView;
+        
+        if (this.participante.id != this.user.id){
+            
+            let botao = document.querySelector(".botao");
+            botao.addEventListener("click", function(){
+                
+                let matchesInfo = matches.getUserMatches(b, participant.id);
+                let receiveUserObject = sessionStorage.getItem('userObject');
+                let userObject = JSON.parse(receiveUserObject)
+
+                
+                let database = firebase.database();
+                let inscrever = database.ref('boloes/soon/' + b + '/participants/').push(
+                    userObject
+                ).then(x => {
+                    let numberOfParticipantes = database.ref('boloes/soon/' + b + '/info/participants');
+
+                    numberOfParticipantes.once('value').then(numero => {
+                        let numeroAtualizado = numero.val() + 1;
+
+                        let numeroDeParticipantes = {
+                            participants: numeroAtualizado
+                        }
+                        database.ref('boloes/soon/' + b + '/info/').update(numeroDeParticipantes)
+                        
                     })
-                }
-
-                if(status == "mine"){
-                    botao.remove();
-                }
-
-                
-            }   
-        }
-    }
-
-    realizarInscricao(){
-
-        let botao = document.querySelector(".botao");
-        
-        let a = sessionStorage.getItem("info");
-        let boloesInfo = JSON.parse(a)
-
-        for (let i = 0; i < boloesInfo.soon.length; i++) {
-
-            
-            let participant = this.info.participants.id;
-            console.log(participant)
-            console.log(i)
-            
-            let userID = this.user.id
-            if (participant.id != userID){
-                
-                botao.addEventListener("click", function(){
-                    
-                    let a = 1
-                    console.log("Entrei");
-        
-                    let database = firebase.database();
-
-                    let x = database.ref('boloes/soon/' + i + '/participants/').push(
-                        {id: participant}
-                    );
-                    
-                    console.log("Passei")
-
+                    // .then(x => atualizaView())
                 })
-                
-            }   
-        }
+            })
 
-2
+        }
     }
+
+    getUserMatches(){
+
+    }
+
 }

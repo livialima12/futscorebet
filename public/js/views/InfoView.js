@@ -61,18 +61,24 @@ class InfoView{
     }
 
     templateParticipants(participants){
-
-        this.arrayParticipants = [];
-        let i;
         
-        for (i = 0; i < participants.length; i++) {
-            let participantsTemplate = `
-                <p class="info-div">${participants[i].id}</p>
-            `
+        this.arrayParticipants = [];
+
+        for(var index in participants){
+            let participantsTemplate = `<p class="info-div">${participants[index].id}</p>`;
             this.arrayParticipants.push(participantsTemplate);
         }
+        
         let arrayParticipants = this.arrayParticipants.join("");
+
         return arrayParticipants;
     }
+
+    atualizaView(){
+        sessionStorage.removeItem("infoArrayBolao");
+        sessionStorage.removeItem("info");
+        window.location = "dashboard.html";
+    }
+
     
 }

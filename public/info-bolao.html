@@ -18,6 +18,7 @@
     <body>
 
         <header>
+            
             <img src="images/logo.png" alt="FutScore Bet" class="logo-header">
             <i onclick="sideMenuController.openSidebarMenu()" class="fas fa-bars menu-icon"></i> 
             <i onclick="sideMenuController.closeSidebarMenu()" class="fas fa-times menu-icon close-menu-icon" style = "visibility: hidden"></i> 
@@ -99,26 +100,18 @@
         <!--Controller-->
         <script src="js/controllers/InfoController.js"></script>
         <script src="js/controllers/SideMenuController.js"></script>
-        
         <script src="js/controllers/TabsController.js"></script>
-        
-        <!-- Helpers -->
-        
         
         <!--Models-->
 
         <script src="js/models/BolaoInfo.js"></script>
         <script src="js/models/Info.js"></script>
-        
-        
-        
-        <!-- Services -->
+        <script src="js/models/MatchesSubscription.js"></script>
 
         <!-- Views -->
         <script src="js/views/SideMenuView.js"></script>
         <script src="js/views/TabsMenuView.js"></script>
         <script src="js/views/InfoView.js"></script>
-        
 
         <script>      
             let sideMenuController = new SideMenuController();
