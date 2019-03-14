@@ -3,7 +3,6 @@ class Info{
         this.template = new InfoView;
     }
     
-    
     carregaObjetoInfo(target){
         this.template.load(target);
     }
@@ -13,3 +12,9 @@ class Info{
     }
 
 }
+
+
+
+
+
+
