@@ -124,7 +124,7 @@ class InfoController{
                         database.ref('boloes/soon/' + b + '/info/').update(numeroDeParticipantes)
                         
                     })
-                    // .then(x => atualizaView())
+                    .then(x => atualizaView())
                 })
             })
 
