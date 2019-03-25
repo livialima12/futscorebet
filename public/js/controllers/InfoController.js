@@ -90,7 +90,9 @@ class InfoController{
                                         }
                                         database.ref('boloes/soon/' + b + '/info/').update(numeroDeParticipantes)
                                         
-                                    }).then(x => this.view.atualizaView())
+                                    }).then(
+                                        x => this.view.atualizaView()
+                                    )
                                 })
                             })
                         }   
@@ -101,40 +103,44 @@ class InfoController{
     }
 
     confirmaInscricao(){
-
         let b = this.i;
-        const matches = new MatchesSubscription();
-        
+        let matches = new MatchesSubscription();
         let participant = this.user
         let atualizaView = this.view.atualizaView;
         
         if (this.participante.id != this.user.id){
-            
             let botao = document.querySelector(".botao");
             botao.addEventListener("click", function(){
-                
+
                 let matchesInfo = matches.getUserMatches(b, participant.id);
+
                 let receiveUserObject = sessionStorage.getItem('userObject');
                 let userObject = JSON.parse(receiveUserObject)
 
-                
-                let database = firebase.database();
-                let inscrever = database.ref('boloes/soon/' + b + '/participants/').push(
-                    userObject
-                ).then(x => {
-                    let numberOfParticipantes = database.ref('boloes/soon/' + b + '/info/participants');
-
-                    numberOfParticipantes.once('value').then(numero => {
-                        let numeroAtualizado = numero.val() + 1;
-
-                        let numeroDeParticipantes = {
-                            participants: numeroAtualizado
-                        }
-                        database.ref('boloes/soon/' + b + '/info/').update(numeroDeParticipantes)
-                        
+                if(receiveUserObject != null || userObject != null ){
+                    let database = firebase.database();
+                    let inscrever = database.ref('boloes/soon/' + b + '/participants/').push(userObject);
+                    inscrever.then(x => {
+                        let numberOfParticipantes = database.ref('boloes/soon/' + b + '/info/participants');    
+                        numberOfParticipantes.once('value').then(numero => {
+                            console.log(numero.val())
+                            let numeroAtualizado = numero.val() + 1;
+                            let numeroDeParticipantes = {
+                                participants: numeroAtualizado
+                            }
+                            database.ref('boloes/soon/' + b + '/info/').update(numeroDeParticipantes)
+                        })
+                        .then(
+                            x => atualizaView()
+                        )
+                        .catch(erro => console.log(erro))
                     })
+<<<<<<< Updated upstream
                     .then(x => atualizaView())
                 })
+=======
+                }
+>>>>>>> Stashed changes
             })
 
         }
