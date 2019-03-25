@@ -28,8 +28,6 @@ class DashboardController{
                     var infoInProgress = infoObject.inProgress
                     var infoSoon = infoObject.soon
                     var infos = infoInProgress.concat(infoSoon)
-
-                    console.log(infos)
                     
                     var i;
 
