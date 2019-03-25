@@ -62,9 +62,10 @@ class InfoController{
                     this.arrayIDs.push(id)
                 }
                 
-                for (let index = 0; index < this.arrayParticipantes.length; index++) {
+                for (let index = 0; index <= this.arrayParticipantes.length; index++) {
                     
                     this.participante = this.arrayParticipantes[index];
+                    console.log(this.participante)
                     this.arrayID = this.arrayIDs[index];
                     
                     //cancela inscrição
