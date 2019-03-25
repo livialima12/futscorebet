@@ -1,0 +1,82 @@
+/*Menu superior*/
+.upper{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2%;
+    background-color: white;
+}
+
+.search{
+    display: flex;
+    margin: 0.5em auto;
+    justify-content: center;
+    height: 1.8em;
+    width: 90%;
+}
+.search input{
+    width: 70%
+}
+.search button{
+    width: 30%;
+}
+
+.suspended-menu{
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5em;
+    background-color: white;
+    padding-bottom: 2%;
+}
+.suspended-menu ol{
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+    width: 90%;
+    margin-bottom: 1em;
+}
+.suspended-menu .filter{
+    display: flex;
+    width: 90%;
+    align-self: center;
+    justify-content: flex-end;
+    
+}
+
+a{
+    font-size: 80%;
+    color: #a7a7a7;
+    text-decoration: none;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+a:active{
+    color: black;
+    text-decoration: none;
+}
+
+/*Conteúdo principal*/
+header{
+    display: flex;
+    align-items: center;
+}
+
+.content{
+    text-align: center;
+}
+
+
+
+@media (min-width: 480px){
+
+    
+
+}
+
+@media (min-width: 780px){
+
+    
+}
+
+@media (min-width: 970px){
+    
+}

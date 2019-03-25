@@ -5,10 +5,13 @@ class InfoController{
         this.infoModel = new Info();
         this.view = new InfoView();
         
+        this.status = sessionStorage.getItem("status");
+        
         this.carregaPaginaInfo();
         this.cancelaInscricao();
         this.removeBotaoInscricao();
         this.confirmaInscricao();
+
     }
     
     carregaPaginaInfo(){
@@ -23,12 +26,18 @@ class InfoController{
         
         //Carrega models
         this.infoModel.carregaObjetoInfo(this.info);
-        this.infoModel.carregaParticipants(this.info.participants);
+        if (this.status == "mine"){
+            const tab = document.querySelector(".secondTab");
+            tab.innerHTML = "Ranking"
+            this.ranking = new RankingController();
+    
+        } else {
+            this.infoModel.carregaParticipants(this.info.participants);
+        }
     }
     
     removeBotaoInscricao(){
         if(this.status == "mine"){
-            console.log("Aqui")
             this.botao.remove();
         }
     }
@@ -38,7 +47,6 @@ class InfoController{
         this.participants = 0;
         this.arrayParticipantes = [];
         this.arrayIDs = [];
-        this.status = sessionStorage.getItem("status");
         this.botao = document.querySelector(".botao");
         
         for (let i = 0; i < this.boloesInfo.soon.length; i++) {
@@ -54,9 +62,10 @@ class InfoController{
                     this.arrayIDs.push(id)
                 }
                 
-                for (let index = 0; index < this.arrayParticipantes.length; index++) {
+                for (let index = 0; index <= this.arrayParticipantes.length; index++) {
                     
                     this.participante = this.arrayParticipantes[index];
+                    console.log(this.participante)
                     this.arrayID = this.arrayIDs[index];
                     
                     //cancela inscrição
@@ -130,9 +139,4 @@ class InfoController{
 
         }
     }
-
-    getUserMatches(){
-
-    }
-
 }

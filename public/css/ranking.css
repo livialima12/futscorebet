@@ -1,0 +1,12 @@
+.table-left{
+
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.table-right{
+
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>FutScore Bet</title>
+        
+        <link rel="stylesheet" type="text/css" href="css/reset.css">
+        <link rel="stylesheet" type="text/css" href="css/global.css">
+        <link rel="stylesheet" type="text/css" href="css/home.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <meta name="viewport" content="width=device-width">
+
+        <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyDKyvud1Xm-EdlEpMDNPQ6XBL_bZEMFwPw",
+                authDomain: "projetoteste-cd06d.firebaseapp.com",
+                databaseURL: "https://projetoteste-cd06d.firebaseio.com",
+                projectId: "projetoteste-cd06d",
+                storageBucket: "projetoteste-cd06d.appspot.com",
+                messagingSenderId: "840611139193"
+            };
+            firebase.initializeApp(config);
+        </script>
+    </head>
+
+    <body>
+
+        <header>
+            <img src="images/logo.png" alt="FutScore Bet" class="logo-header" width=15% height=15%>
+        </header>
+        
+        <main>
+
+            <section class="form login">
+
+                <h2>Login</h2>
+
+                <form id="login" onsubmit="loginController.login(event)">
+
+                    <fieldset class="login-info">
+
+                        <label for="email" ></label>                        
+                        <div id="icon-email" for="email">
+                        <input 
+                        id="email"
+                        name="email"
+                        type="email"
+                        autofocus
+                        placeholder="Digite seu email"
+                        required
+                        >
+                        </div>
+
+                        <label for="password"></label>
+                        <div id="icon-password">
+                        <input
+                        id="password"
+                        name="password"
+                        type="password"
+                        placeholder="Digite sua senha"
+                        required
+                        >
+                        </div>
+                    </fieldset>
+
+                    <button class="botao" type="submit">Log In</button>
+
+                    <div class="interaction">
+                        <a href="#" id="button-forgot" onclick="loginController.esqueciASenha()">Esqueci minha senha</a>
+                        <a href="sign_in.html" id="button-signin">Cadastre-se</a>
+                        
+                    </div>
+                    
+
+                </form>
+            
+            </section>
+
+            <section class="form forgot hide">
+
+                    <h2>Esqueci minha senha</h2>
+
+                    <form id="forgot-password">
+                        <label for="email-recover" ></label>                        
+                        <input 
+                        id="email-recover"
+                        name="email-recover"
+                        type="email"
+                        autofocus
+                        placeholder="Digite seu email"
+                        required
+                        >
+                        </div>
+                        <button class="botao">Recuperar minha senha</button>
+
+                        <div class="interaction">
+                            <a href="#" id="button-already-login" onclick="loginController.esqueciASenha()">Já sou cadastrado. Fazer login</a>
+                            <a href="sign_in.html" id="button-signin">Cadastre-se</a>        
+                        </div>
+                    </form>
+
+
+
+            </section>
+
+
+        </main>
+        <footer>
+        </footer>        
+
+        <script src="js/controllers/LoginController.js"></script>
+        <script src="js/models/Login.js"></script>
+        <script src="js/views/LoginView.js"></script>
+        <script src="js/UserInfo.js"></script>
+
+        <script> let loginController = new LoginController() </script>
+        
+    </body>
+</html>

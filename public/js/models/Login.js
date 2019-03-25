@@ -21,7 +21,6 @@ class Login{
                 .then(
                     info => {
                         this.getUserInfo(info.user.email);
-                        
                     }
                 )
                 .catch(function(error){

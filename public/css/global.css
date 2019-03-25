@@ -1,0 +1,87 @@
+/*
+color pallete:
+dark-blue: #191820
+aqua-blue: #58d8c9
+grey: #494657
+light grey: #eceef2
+dark grey: #363636
+
+*/
+
+html{
+    height: 100%;
+}
+
+body{
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  background-color: #eceef2;
+  height: 100%;
+  overflow: scroll;
+}
+
+header {
+    background-color: #191820;
+    text-align: center;
+    padding: 1em;
+    display: flex;
+    height: auto;
+}
+
+.logo-header{
+    margin: auto;
+    width: 45%;
+    height: 45%;
+}
+
+/*Menu Lateral*/
+.menu-icon{
+    color: white;
+    transform: scale(1.5);
+    position: absolute;
+    transform-origin: 0;
+}
+
+.sidebar-menu{
+
+    background-color: #ced1d6;
+    z-index: 1;
+    position: fixed;
+    top: -2;
+    left: -90%;
+
+    width: 65%;
+    max-width: 320px;
+    height: 100%;
+    padding: 1em;
+
+    transition: left 0.3s ease-out;
+}
+
+.active-menu{
+    left: 0;
+}
+
+
+
+
+/*Links*/
+a{
+    font-size: 0.7rem;
+    color: #ced1d6;
+    text-decoration: none;
+}
+a:hover{
+    color:#191820;
+    text-decoration: underline;
+}
+
+
+
+@media (min-width: 430px){
+    .logo-header{
+        margin: auto;
+        width: 20%;
+        height: 20%;
+    }
+}

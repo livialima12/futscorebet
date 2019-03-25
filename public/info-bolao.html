@@ -10,6 +10,7 @@
         <link rel="stylesheet" type="text/css" href="css/dashboard.css">
         <link rel="stylesheet" type="text/css" href="css/tabs.css">
         <link rel="stylesheet" type="text/css" href="css/info.css">
+        <link rel="stylesheet" type="text/css" href="css/ranking.css">
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Montserrat">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
         <meta name="viewport" content="width=device-width">
@@ -57,8 +58,8 @@
                 </div>
 
                 <div class="tab">
-                    <button class="tablink" onclick="tabsController.openTab('.info-bolao')">Informações</button>
-                    <button class="tablink" onclick="tabsController.openTab('.participantes-bolao')">Participantes</button>
+                    <button class="tablink firstTab" onclick="tabsController.openTab('.info-bolao')">Informações</button>
+                    <button class="tablink secondTab" onclick="tabsController.openTab('.participantes-bolao')">Participantes</button>
                 </div>
 
                 <!-- <div class="filter">
@@ -101,16 +102,19 @@
         <script src="js/controllers/InfoController.js"></script>
         <script src="js/controllers/SideMenuController.js"></script>
         <script src="js/controllers/TabsController.js"></script>
+        <script src="js/controllers/RankingController.js"></script>
         
         <!--Models-->
 
         <script src="js/models/BolaoInfo.js"></script>
         <script src="js/models/Info.js"></script>
+        <script src="js/models/Ranking.js"></script>
         <script src="js/models/MatchesSubscription.js"></script>
 
         <!-- Views -->
         <script src="js/views/SideMenuView.js"></script>
         <script src="js/views/TabsMenuView.js"></script>
+        <script src="js/views/RankingView.js"></script>
         <script src="js/views/InfoView.js"></script>
 
         <script>      
